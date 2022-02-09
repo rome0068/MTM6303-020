@@ -1,0 +1,23 @@
+{%- assign primary_locale = 'null' -%}
+{%- for locale in shop.published_locales -%}{%- if locale.primary -%}{%- assign primary_locale = locale.iso_code | json -%}{%- endif -%}{%- endfor -%}
+<script type="text/javascript">
+  window.GloboMenuConfig = window.GloboMenuConfig || {}
+  window.GloboMenuConfig.hasCarousel = {% if items contains 'carousel' %}true{% else %}false{% endif %};
+  window.GloboMenuConfig.products = window.GloboMenuConfig.products || {};
+  window.GloboMenuConfig.collections = window.GloboMenuConfig.collections || {};
+  window.GloboMenuConfig.pages = window.GloboMenuConfig.pages || {};
+  window.GloboMenuConfig.curLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.GloboMenuLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.locale = {{primary_locale}};
+  window.GloboMenuConfig.isMultiCurrency  = false;
+  window.GloboMenuConfig.GloboMenuMissingProducts = [];
+  {%- capture product -%}{{-all_products['kazakhstan'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('kazakhstan');{%- else -%}window.GloboMenuConfig.products['kazakhstan'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['mediterranean-table-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('mediterranean-table-set');{%- else -%}window.GloboMenuConfig.products['mediterranean-table-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['modern-ivory-white-table-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('modern-ivory-white-table-set');{%- else -%}window.GloboMenuConfig.products['modern-ivory-white-table-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['new-york-table-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('new-york-table-set');{%- else -%}window.GloboMenuConfig.products['new-york-table-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['two-chair-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('two-chair-set');{%- else -%}window.GloboMenuConfig.products['two-chair-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['serbian-table-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('serbian-table-set');{%- else -%}window.GloboMenuConfig.products['serbian-table-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['macedonian-breakfast-table'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('macedonian-breakfast-table');{%- else -%}window.GloboMenuConfig.products['macedonian-breakfast-table'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['new-york-couch'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('new-york-couch');{%- else -%}window.GloboMenuConfig.products['new-york-couch'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['milano-couch'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('milano-couch');{%- else -%}window.GloboMenuConfig.products['milano-couch'] = {{-product-}};{%- endif -%}
+</script>
