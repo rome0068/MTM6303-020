@@ -61,6 +61,9 @@ define( 'DB_COLLATE', '' );
  */
 $table_prefix = 'wp_';
 
+define( 'WP_HOME', 'http://rome0068mtm6303inclass6.local/' );
+define( 'WP_SITEURL', 'http://rome0068mtm6303inclass6.local/' );
+
 /**
  * For developers: WordPress debugging mode.
  *
